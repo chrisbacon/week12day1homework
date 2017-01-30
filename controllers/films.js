@@ -7,4 +7,8 @@ var express = require('express');
 
 var filmRouter = express.Router();
 
+filmRouter.get('/', function(req, res) {
+  res.json({data:films});
+});
+
 module.exports = filmRouter;
