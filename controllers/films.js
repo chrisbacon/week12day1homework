@@ -11,4 +11,24 @@ filmRouter.get('/', function(req, res) {
   res.json({data:films});
 });
 
+filmRouter.get('/:id', function(req, res){
+  res.json({data:films[req.params.id]});
+});
+
+// filmRouter.put('/:id', function(req, res) {
+//   films[req.params.id] = req.body.film;
+//   res.json({data: films});
+// });
+
+filmRouter.post('/', function(req, res) {
+  console.log(req.body)
+  films.push(req.body.film);
+  res.json({data: films});
+});
+
+// filmRouter.delete('/:id', function(req, res) {
+//   films.splice(req.params.id, 1);
+//   res.json({data: films});
+// });
+
 module.exports = filmRouter;
