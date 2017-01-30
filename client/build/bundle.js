@@ -88,6 +88,7 @@
 	    for(var film of films) {
 	      var li = document.createElement("li");
 	      this.appendText(li, film.title, "Film: ");
+	      this.appendText(li, film.genre, "Genre: ");
 	      
 	      for(var review of film.reviews){
 	        this.createReview(li, review);
@@ -122,11 +123,13 @@
 	
 	  var film1 = new Film({
 	    title: "Now You See Me",
+	    genre: "Thriller",
 	    actors: ["Woody Harrelson", "Jesse Eisenberg"]
 	  });
 	
 	  var film2 = new Film({
 	    title: "Star Wars Episode IV: A New Hope",
+	    genre: "Sci-Fi",
 	    actors: ["Harrison Ford", "Alec Guiness"]
 	  });
 	
@@ -145,6 +148,7 @@
 	var Film = function(options){
 	  this.title = options.title;
 	  this.actors = options.actors;
+	  this.genre = options.genre;
 	  this.reviews = options.reviews || [];
 	}
 	
