@@ -15,10 +15,10 @@ filmRouter.get('/:id', function(req, res){
   res.json({data:films[req.params.id]});
 });
 
-// filmRouter.put('/:id', function(req, res) {
-//   films[req.params.id] = req.body.film;
-//   res.json({data: films});
-// });
+filmRouter.put('/:id', function(req, res) {
+  films[req.params.id] = req.body.film;
+  res.json({data: films});
+});
 
 filmRouter.post('/', function(req, res) {
   console.log(req.body)
